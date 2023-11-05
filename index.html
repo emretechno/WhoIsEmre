@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <style>
         body {
-            background-color: gray
+            background-color: gray;
         }
 
         h1 {
@@ -18,65 +18,99 @@
         .hidden-personality {
             display: none; /* Initially hide the personality information */
         }
-    </style>
-</head>
-<body>
-    <h1 style="color: blueviolet; font-size: 24px; font-family: 'Courier New', monospace;">Sivas Kangali Yusuf Emre Kilicer</h1>
-    <p style="color: black;font-size: 30px">Ben Kimim ve Neyim ?</p>
 
-    <ul>
-        <li style="color: red; font-size: 20px;">Yas: 20</li>
-        <li style="color: red;font-size: 20px">Bolum: CENG</li>
-        <li style="color: red;font-size: 20px">Hobiler: Bilardo, Yuzme, Gym</li>
-    </ul>
-
-    <ol>
-        <button id="showPersonality" style="font: optional; font-size: 20px; background-color: red ; color: black;">Hakkimda fazlasi icin buraya tikla</button>
-
-    </ol>
-
-    <a href="https://www.instagram.com/y.emr3kilicer/" style="color: gold; text-decoration: firebrick; font-size: 20px;"><<---VISIT ME!</a>
-
-
-    <div class="hidden-personality">
-        <p style="color:gold; font-size: 20px; " >IKIZLER BURCU</p>
-        <p style="color: gold; font-size: 20px; " >ODAKLANMIS VE AVINA GUDUMLU</p>
-        <p style="color: gold; font-size: 20px; " >ILKELI VE CALISKAN</p>
-
-        <!-- Add your personality information here -->
-    </div>
-
-    <style>
         .image-container {
             border: 2px solid #000;
             padding: 10px;
             text-align: center;
+            display: none; /* Initially hide the image container */
         }
 
         .image-container img {
             max-width: 26%;
             height: auto;
         }
+
+        #showImageButton {
+            font-size: 22px;
+            background-color: gold;
+            color: black;
+            cursor: pointer;
+        }
     </style>
-    </head>
-    <body>
-        <h1>IS THIS AM I ?<nav></nav> 
-            WOW!YOU KIDDIN'</h1>
-        
-        <div class="image-container">
-            <img src="IMG_3362.jpeg" alt="A classic of me">
+</head>
+<body>
+    <button id="contactButton" style="font-size: 22px; background-color: gold; color: black;">
+        <<--CLICK THIS TO SEND AN EMAIL TO ME:
+     </button>
+     <h1 style="color: black; font-size: 45px; font-family: 'Courier New', monospace;">Yusuf Emre KILICER</h1>
+
+    <p style="color: skyblue; font-size: 26px">AM I A HERO OR SOMETIN'?</p>
+
+    <div class="image-container" id="imageContainer">
+        <img src="IMG_3362.jpeg" alt="Yes! It is Me...">
+        <h1 style="color: gold; font-style: italic; font-size: 30px;">IS THIS ME? WOW! YOU KIDDIN'</h1>
+    </div>
+
+
+    <ul>
+        <li style="color: burlywood; font-size: xx-large; font-style: italic; font-style: oblique;">NO ! JUST A HUMANBEING</li>
+    </ul>
+    <li style="color: skyblue; font-size: large; font-size: xx-large;">WHY DID YOU THINK THAT ?</li>
+    <ol>
+        <button id="showPersonality" style="font: optional; font-size: 22px;font-style:italic; background-color: gold; color: black;"><<--CLICK TO SEE THE REASONS :</button>
+
+        <div class="hidden-personality">
+            <p style="color: gold; font-size: 20px; font-style: italic;">' ->'CAUSE I WORK A LOT '</p>
+            <p style="color: gold; font-size: 20px; font-style: italic;"> ->EAGER TO LEARN</p>
+            <p style="color: gold; font-size: 20px; font-style: italic;"> ->READY TO SACRIFICE</p>
         </div>
+    </ol>
+
+    <a href="https://www.instagram.com/y.emr3kilicer/" style="color: gold; text-decoration: firebrick; font-size: 25px;">
+        <<---CLICK TO VISIT MY INSTAGRAM<br><br>
+    </a>
+      <!-- Contact button -->
     
-    </body>
+    
+
+    <div class="image-container" id="imageContainer">
+        <img src="IMG_3362.jpeg" alt="Yes ! It is Me...">
+        <h1 style="color: gold; font-style: italic; font-size: 30px;">IS THIS ME ? WOW! YOU KIDDIN'</h1>
+
+    </div>
+       
+    <button id="showImageButton" style="font-size: 22px; background-color: burlywood; color: black; cursor: pointer;"><<---CLICK THIS IF YOU WONDER ME </button>
 
     <script>
-        document.getElementById("showPersonality").addEventListener("click", function() {
+        document.getElementById("showPersonality").addEventListener("click", function () {
             var personalityDiv = document.querySelector(".hidden-personality");
             if (personalityDiv.style.display === "none" || personalityDiv.style.display === "") {
                 personalityDiv.style.display = "block";
             } else {
                 personalityDiv.style.display = "none";
             }
+        });
+
+        document.getElementById("showImageButton").addEventListener("click", function () {
+            var imageContainer = document.getElementById("imageContainer");
+            if (imageContainer.style.display === "none" || imageContainer.style.display === "") {
+                imageContainer.style.display = "block";
+            } else {
+                imageContainer.style.display = "none";
+            }
+        });
+        document.getElementById("contactButton").addEventListener("click", function () {
+            // Replace 'your-email@example.com' with your actual email address
+            var emailAddress = 'yusuf.klcrr@gmail.com';
+            var subject = 'Hello from your website';
+            var body = 'I would like to get in touch with you!';
+
+            // Generate a "mailto" link
+            var mailtoLink = 'mailto:' + emailAddress + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+            // Open the user's email client
+            window.location.href = mailtoLink;
         });
     </script>
 </body>
