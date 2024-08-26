@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -161,5 +162,109 @@
         </div>
     </div>
     <script src="script.js"></script>
+=======
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            background-color: gray;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        p {
+            color: red;
+        }
+
+        .hidden-personality {
+            display: none; /* Initially hide the personality information */
+        }
+
+        .image-container {
+            border: 2px solid #000;
+            padding: 10px;
+            text-align: center;
+            display: none; /* Initially hide the image container */
+        }
+
+        .image-container img {
+            max-width: 26%;
+            height: auto;
+        }
+
+        #showImageButton {
+            font-size: 22px;
+            background-color: gold;
+            color: black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="contactButton" style="font-size: 22px; background-color: gold; color: black;">
+        <<--CLICK THIS TO SEND AN EMAIL TO ME:
+     </button>
+     <h1 style="color: black; font-size: 45px; font-family: 'Courier New', monospace;">Yusuf Emre KILICER</h1>
+
+
+    <div class="image-container" id="imageContainer">
+        <img src="IMG_3362.jpeg" alt="Yes! It is Me...">
+        <h1 style="color: gold; font-style: italic; font-size: 30px;">IS THIS ME? WOW! YOU KIDDIN'</h1>
+    </div>
+
+
+    <ul>
+        
+    </ul>
+    <ol>
+
+    </ol>
+
+    <a href="https://www.linkedin.com/in/yusuf-emre-kılıçer-5ab0231a7/" style="color: gold; text-decoration: firebrick; font-size: 25px;">
+        <<---CLICK TO VISIT MY LINKEDN <br><br>
+    </a>
+      <!-- Contact button -->
+    
+    
+
+    
+       
+    <button id="showImageButton" style="font-size: 22px; background-color: burlywood; color: black; cursor: pointer;"><<---CLICK TO SEE MY CV  </button>
+
+    <script>
+        document.getElementById("showPersonality").addEventListener("click", function () {
+            var personalityDiv = document.querySelector(".hidden-personality");
+            if (personalityDiv.style.display === "none" || personalityDiv.style.display === "") {
+                personalityDiv.style.display = "block";
+            } else {
+                personalityDiv.style.display = "none";
+            }
+        });
+
+        document.getElementById("showImageButton").addEventListener("click", function () {
+            var imageContainer = document.getElementById("imageContainer");
+            if (imageContainer.style.display === "none" || imageContainer.style.display === "") {
+                imageContainer.style.display = "block";
+            } else {
+                imageContainer.style.display = "none";
+            }
+        });
+        document.getElementById("contactButton").addEventListener("click", function () {
+            // Replace 'your-email@example.com' with your actual email address
+            var emailAddress = 'yusuf.klcrr@gmail.com';
+            var subject = 'Hello from your website';
+            var body = 'I would like to get in touch with you!';
+
+            // Generate a "mailto" link
+            var mailtoLink = 'mailto:' + emailAddress + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+            // Open the user's email client
+            window.location.href = mailtoLink;
+        });
+    </script>
+>>>>>>> 05c8c475a25dfbf2a2b34a5195e56185fdd48adc
 </body>
 </html>
