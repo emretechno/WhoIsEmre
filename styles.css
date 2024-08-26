@@ -47,7 +47,7 @@ body {
 
 body {
     font-family: 'Times New Roman', serif;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url('image/motherboard-circuit-background.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url('images/motherboard-circuit-background.jpg');
     background-size: cover;
     background-position: center;
     margin: 0;
