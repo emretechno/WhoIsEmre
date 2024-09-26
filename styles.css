@@ -267,6 +267,29 @@ body {
 }
 
 
+#navigation-buttons {
+    text-align: center; /* Center buttons */
+    margin-top: 20px;
+}
+
+#prevBtn, #nextBtn {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#prevBtn:hover, #nextBtn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
 /* Media Queries */
 @media only screen and (max-width: 768px) {
     body {
