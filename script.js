@@ -42,3 +42,4 @@ function showPreviousProject() {
 
 // Initially show the first project
 showProject(currentIndex);
+
