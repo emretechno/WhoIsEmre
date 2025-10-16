@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Academic Profile</title>
+  <title>Yusuf Emre Kılıçer - Portfolio</title>
 
-  <!-- Font Awesome for icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
   />
 
-  <!-- Link to your external CSS file -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3LSYQW9KL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -26,260 +27,352 @@
   </script>
 </head>
 <body>
-  <div class="title-container">
-    <h1>Yusuf Emre Kılıçer</h1>
-    <h2>Computer Engineering Student</h2>
+  <canvas id="matrix-canvas"></canvas>
+
+  <div class="hero-section">
+    <div class="title-container">
+      <h1>Yusuf Emre Kılıçer</h1>
+      <h2>Computer Engineering Student</h2>
+      <div class="title-decoration"></div>
+    </div>
   </div>
 
   <div class="container">
-    <!-- TAB BUTTONS -->
     <div class="buttons-container">
-      <button class="tab-button" onclick="showTab('projects')">PROJECTS</button>
-      <button class="tab-button" onclick="showTab('skills')">SKILLS</button>
-      <button class="tab-button" onclick="showTab('contacts')">CONTACT</button>
+      <button class="tab-button active" onclick="showTab('projects')">
+        <i class="fas fa-code"></i>
+        <span>PROJECTS</span>
+      </button>
+      <button class="tab-button" onclick="showTab('skills')">
+        <i class="fas fa-tools"></i>
+        <span>SKILLS</span>
+      </button>
+      <button class="tab-button" onclick="showTab('contacts')">
+        <i class="fas fa-envelope"></i>
+        <span>CONTACT</span>
+      </button>
     </div>
 
-    <!-- PROFILE SECTION -->
     <div class="profile-container">
       <div class="profile-photo">
         <img
           src="images/9689BA63-665F-46DF-BB20-AF046BF88718.jpg"
           alt="Profile Photo of Yusuf Emre KILICER"
         />
+        <div class="profile-photo-overlay"></div>
       </div>
       <div class="profile-content">
-        <table>
-          <tr>
-            <td>University</td>
-            <td>Gebze Technical University</td>
-          </tr>
-          <tr>
-            <td>Erasmus+ Student Exchange</td>
-            <td>University Of Primorska</td>
-          </tr>
-          <tr>
-            <td>Department</td>
-            <td>Computer Engineering</td>
-          </tr>
-          <tr>
-            <td>Email</td>
-            <td>
-              <a href="mailto:y.kilicer2021@gtu.edu.tr"
-                >y.kilicer2021@gtu.edu.tr</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>Phone</td>
-            <td>+90 546 764 5838</td>
-          </tr>
-          <tr>
-            <td>CV</td>
-            <td>
-              <a href="images/Y-EMRE CV.pdf" download>View</a>
-            </td>
-          </tr>
-          <tr>
-            <td>Transcript</td>
-            <td>
-              <a href="images/transcript.pdf" download>View</a>
-            </td>
-          </tr>
-        </table>
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">University</div>
+            <div class="info-value">Gebze Technical University</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Erasmus+ Student Exchange</div>
+            <div class="info-value">University Of Primorska</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Department</div>
+            <div class="info-value">Computer Engineering</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Email</div>
+            <div class="info-value">
+              <a href="mailto:y.kilicer2021@gtu.edu.tr">y.kilicer2021@gtu.edu.tr</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Phone</div>
+            <div class="info-value">+90 546 764 5838</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">CV</div>
+            <div class="info-value">
+              <a href="images/Y-EMRE CV.pdf" download class="download-link">
+                <i class="fas fa-download"></i> View
+              </a>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Transcript</div>
+            <div class="info-value">
+              <a href="images/transcript.pdf" download class="download-link">
+                <i class="fas fa-download"></i> View
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- TABS CONTENT -->
     <div class="tabs-container">
-      <!-- PROJECTS TAB -->
       <div id="projects" class="tab-content">
-        <h3>PROJECTS</h3>
-        <ul class="tab-list">
-          <!-- Each project item -->
-          <li class="tab-item project">
-            <h4>GTU Q/A Chat Bot</h4>
-            <strong
-              >GITHUB :
+        <h3><i class="fas fa-laptop-code"></i> PROJECTS</h3>
+        <div class="projects-grid">
+          <div class="tab-item project">
+            <div class="project-header">
+              <h4>GTU Q/A Chat Bot</h4>
+              <span class="project-badge">NLP</span>
+            </div>
+            <div class="project-link">
+              <i class="fab fa-github"></i>
               <a
                 href="https://github.com/emretechno/Natural-Language-Process"
                 target="_blank"
-                >https://github.com/emretechno/Natural-Language-Process</a
-              ></strong
-            >
-            <div>
+                >github.com/emretechno/Natural-Language-Process</a
+              >
+            </div>
+            <div class="project-description">
               Developed a Q/A system for GTU regulation rules using transformers
               with other NLP techniques, and a Flask backend.
             </div>
-          </li>
-          <li class="tab-item project">
-            <h4>Statistical Language Model for Turkish</h4>
-            <strong
-              >GITHUB :
+          </div>
+
+          <div class="tab-item project">
+            <div class="project-header">
+              <h4>Statistical Language Model for Turkish</h4>
+              <span class="project-badge">ML</span>
+            </div>
+            <div class="project-link">
+              <i class="fab fa-github"></i>
               <a
                 href="https://github.com/emretechno/Statistical-Language-Model"
                 target="_blank"
-                >https://github.com/emretechno/Statistical-Language-Model</a
-              ></strong
-            >
-            <div>
+                >github.com/emretechno/Statistical-Language-Model</a
+              >
+            </div>
+            <div class="project-description">
               Developed and analyzed syllable-based and character-based N-gram
               models, leveraging Good-Turing smoothing, perplexity evaluation,
               and random sentence generations.
             </div>
-          </li>
-          <li class="tab-item project">
-            <h4>Event Mate Social Media App</h4>
-            <strong
-              >Website :
+          </div>
+
+          <div class="tab-item project">
+            <div class="project-header">
+              <h4>Event Mate Social Media App</h4>
+              <span class="project-badge">Full-Stack</span>
+            </div>
+            <div class="project-link">
+              <i class="fas fa-globe"></i>
               <a href="https://www.eventmate.vip" target="_blank"
-                >https://www.eventmate.vip</a
-              ></strong
-            >
-            <div>
+                >www.eventmate.vip</a
+              >
+            </div>
+            <div class="project-description">
               A Node.js and Flutter-based web and mobile integrated social media
               app with real-time chat and event features for connecting and
               meeting people; developed as a term group project.
             </div>
-          </li>
-          <li class="tab-item project">
-            <h4>Photo Rating& Matching Social Media App</h4>
-            <strong
-              > Developed a Node.js-based platform where users rate themselves and are matched with others based on overlapping ratings. ( still in process )</strong
-            >
-          </li>
-          <li class="tab-item project">
-            <h4>Artifical Intelligence Projects</h4>
-            <strong
-              >GitHub :
+          </div>
+
+          <div class="tab-item project">
+            <div class="project-header">
+              <h4>Photo Rating & Matching Social Media App</h4>
+              <span class="project-badge">In Progress</span>
+            </div>
+            <div class="project-description">
+              Developed a Node.js-based platform where users rate themselves and are matched with others based on overlapping ratings. (still in process)
+            </div>
+          </div>
+
+          <div class="tab-item project">
+            <div class="project-header">
+              <h4>Artificial Intelligence Projects</h4>
+              <span class="project-badge">AI</span>
+            </div>
+            <div class="project-link">
+              <i class="fab fa-github"></i>
               <a
                 href="https://github.com/emretechno/ARTIFICAL-INTELLIGENCE-JAVA-"
                 target="_blank"
-                >https://github.com/emretechno/ARTIFICAL-INTELLIGENCE-JAVA-</a
-              ></strong
-            >
-            <div>
+                >github.com/emretechno/ARTIFICAL-INTELLIGENCE-JAVA-</a
+              >
+            </div>
+            <div class="project-description">
               Implemented AI algorithms such as Alpha-Beta Pruning, Hidden
               Markov Models (HMM), and Viterbi for problem-solving and
               decision-making tasks.
             </div>
-          </li>
-          <li class="tab-item project">
-            <h4>PROJECTS IN C</h4>
-            <div>Algorithms and System Programming in C</div>
-            <strong
-              >GITHUB :
-              <a
-                href="https://github.com/emretechno/C-PROGRAMMING"
-                target="_blank"
-                >https://github.com/emretechno/C-PROGRAMMING</a
-              ></strong
-            >
-            <div>C Programming Lab Projects</div>
-            <strong
-              >GITHUB :
-              <a
-                href="https://github.com/emretechno/C-Programming-LABS"
-                target="_blank"
-                >https://github.com/emretechno/C-Programming-LABS</a
-              ></strong
-            >
-          </li>
-          <li class="tab-item project">
-            <h4>PROJECTS IN OOP (C++ / JAVA)</h4>
-            <strong
-              >GITHUB :
+          </div>
+
+          <div class="tab-item project">
+            <div class="project-header">
+              <h4>PROJECTS IN C</h4>
+              <span class="project-badge">Systems</span>
+            </div>
+            <div class="project-links-group">
+              <div class="project-link">
+                <i class="fab fa-github"></i>
+                <a
+                  href="https://github.com/emretechno/C-PROGRAMMING"
+                  target="_blank"
+                  >Algorithms and System Programming</a
+                >
+              </div>
+              <div class="project-link">
+                <i class="fab fa-github"></i>
+                <a
+                  href="https://github.com/emretechno/C-Programming-LABS"
+                  target="_blank"
+                  >C Programming Lab Projects</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-item project">
+            <div class="project-header">
+              <h4>PROJECTS IN OOP (C++ / JAVA)</h4>
+              <span class="project-badge">OOP</span>
+            </div>
+            <div class="project-link">
+              <i class="fab fa-github"></i>
               <a
                 href="https://github.com/emretechno/OOP_PROGRAMMING-CPP-JAVA"
                 target="_blank"
-                >https://github.com/emretechno/OOP_PROGRAMMING-CPP-JAVA</a
-              ></strong
-            >
-            <div>C++ and Java Implementations: Developed advanced projects including an AI-based Chess application leveraging game strategies, a Bash-like C++ application simulating command-line functionality, and custom Java containers for efficient data management and manipulation.</div>
-          </li>
-          <li class="tab-item project">
-            <h4>R Programming Term Project</h4>
-            <strong
-              >GITHUB :
-              <a
-                href="https://github.com/emretechno/DATA-R-PROGRAMMING"
-                target="_blank"
-                >https://github.com/emretechno/DATA-R-PROGRAMMING</a
-              ></strong
-            >
-            <div>
-              <strong>Published R Project :</strong>
-              <a
-                href="https://66660508dadd500d3efe04e0--stupendous-mooncake-8eb5c2.netlify.app"
-                target="_blank"
-                >https://66660508dadd500d3efe04e0--stupendous-mooncake-8eb5c2.netlify.app</a
+                >github.com/emretechno/OOP_PROGRAMMING-CPP-JAVA</a
               >
             </div>
-            <div>
+            <div class="project-description">
+              C++ and Java Implementations: Developed advanced projects including an AI-based Chess application leveraging game strategies, a Bash-like C++ application simulating command-line functionality, and custom Java containers for efficient data management and manipulation.
+            </div>
+          </div>
+
+          <div class="tab-item project">
+            <div class="project-header">
+              <h4>R Programming Term Project</h4>
+              <span class="project-badge">Data Science</span>
+            </div>
+            <div class="project-links-group">
+              <div class="project-link">
+                <i class="fab fa-github"></i>
+                <a
+                  href="https://github.com/emretechno/DATA-R-PROGRAMMING"
+                  target="_blank"
+                  >github.com/emretechno/DATA-R-PROGRAMMING</a
+                >
+              </div>
+              <div class="project-link">
+                <i class="fas fa-external-link-alt"></i>
+                <a
+                  href="https://66660508dadd500d3efe04e0--stupendous-mooncake-8eb5c2.netlify.app"
+                  target="_blank"
+                  >Published R Project</a
+                >
+              </div>
+            </div>
+            <div class="project-description">
               Developed data analysis and visualization solutions using R,
               showcasing statistical techniques and interactive dashboards.
             </div>
-          </li>
-          
-        </ul>
+          </div>
+        </div>
 
-        <!-- Next/Previous Buttons -->
         <div id="navigation-buttons">
-          <button id="prevBtn" onclick="showPreviousProject()">Previous</button>
-          <button id="nextBtn" onclick="showNextProject()">Next</button>
+          <button id="prevBtn" onclick="showPreviousProject()">
+            <i class="fas fa-chevron-left"></i> Previous
+          </button>
+          <button id="nextBtn" onclick="showNextProject()">
+            Next <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
       </div>
 
-      <!-- CONTACT TAB -->
       <div id="contacts" class="tab-content">
-        <h3>CONTACT</h3>
-        <ul class="tab-list">
-          <li class="tab-item">
-            <strong>Mail: </strong>
-            <a href="mailto:y.kilicer2021@gtu.edu.tr">
-              <i class="fas fa-envelope"></i> y.kilicer2021@gtu.edu.tr
-            </a>
-          </li>
-          <li class="tab-item">
-            <strong>LinkedIn: </strong>
-            <a
-              href="https://www.linkedin.com/in/yusuf-emre-kılıçer-5ab0231a7/"
-              target="_blank"
-            >
-              <i class="fas fa-globe"></i>
-              https://www.linkedin.com/in/yusuf-emre-kılıçer-5ab0231a7/
-            </a>
-          </li>
-          <li class="tab-item">
-            <strong>GitHub: </strong>
-            <a href="https://github.com/emretechno" target="_blank"
-              ><i class="fas fa-globe"></i> https://github.com/emretechno</a
-            >
-          </li>
-        </ul>
+        <h3><i class="fas fa-address-book"></i> CONTACT</h3>
+        <div class="contact-grid">
+          <div class="tab-item contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-info">
+              <div class="contact-label">Email</div>
+              <a href="mailto:y.kilicer2021@gtu.edu.tr">y.kilicer2021@gtu.edu.tr</a>
+            </div>
+          </div>
+          <div class="tab-item contact-item">
+            <div class="contact-icon">
+              <i class="fab fa-linkedin"></i>
+            </div>
+            <div class="contact-info">
+              <div class="contact-label">LinkedIn</div>
+              <a
+                href="https://www.linkedin.com/in/yusuf-emre-kılıçer-5ab0231a7/"
+                target="_blank"
+              >
+                linkedin.com/in/yusuf-emre-kılıçer
+              </a>
+            </div>
+          </div>
+          <div class="tab-item contact-item">
+            <div class="contact-icon">
+              <i class="fab fa-github"></i>
+            </div>
+            <div class="contact-info">
+              <div class="contact-label">GitHub</div>
+              <a href="https://github.com/emretechno" target="_blank">github.com/emretechno</a>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- SKILLS TAB -->
       <div id="skills" class="tab-content">
-        <h3>SKILLS</h3>
-        <ul class="tab-list">
-          <li class="tab-item">OOP PROGRAMMING</li>
-          <li class="tab-item">JAVA</li>
-          <li class="tab-item">C++</li>
-          <li class="tab-item">C</li>
-          <li class="tab-item">PYTHON</li>
-          <li class="tab-item">NODE.JS</li>
-          <li class="tab-item">HTML - CSS - JAVASCRIPT</li>
-          <li class="tab-item">UNITY</li>
-          <li class="tab-item">ANDROID STUDIO</li>
-          <li class="tab-item">DATA PROGRAMMING</li>
-          <li class="tab-item">GIT SCRIPTING</li>
-          <li class="tab-item">SPRING BOOT</li>
-        </ul>
+        <h3><i class="fas fa-cogs"></i> SKILLS</h3>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <i class="fas fa-code"></i>
+            <span>OOP PROGRAMMING</span>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-java"></i>
+            <span>JAVA</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-code"></i>
+            <span>C++</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-code"></i>
+            <span>C</span>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-python"></i>
+            <span>PYTHON</span>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-node-js"></i>
+            <span>NODE.JS</span>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-html5"></i>
+            <span>HTML - CSS - JAVASCRIPT</span>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-unity"></i>
+            <span>UNITY</span>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-android"></i>
+            <span>ANDROID STUDIO</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-database"></i>
+            <span>DATA PROGRAMMING</span>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-git-alt"></i>
+            <span>GIT SCRIPTING</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-leaf"></i>
+            <span>SPRING BOOT</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Reference to your external JS file -->
   <script src="script.js"></script>
 </body>
 </html>
